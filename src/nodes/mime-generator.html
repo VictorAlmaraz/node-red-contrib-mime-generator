@@ -1,0 +1,110 @@
+<script type="text/javascript">
+    RED.nodes.registerType('MIME Generator',{
+        category: 'social',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            subject: { value: ""},
+            from: { value: ""},
+            to: { value: ""},
+            cc: { value: ""},
+            bcc: { value: ""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "envelope.png",
+        label: function() {
+            return this.name||"MIME Generator";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="MIME Generator">
+    <div class="form-row">
+        <label for="node-input-subject"><i class="fa fa-header"></i> Subject</label>
+        <input type="text" id="node-input-subject" placeholder="Subject">
+    </div>
+    <div class="form-row">
+        <label for="node-input-from"><i class="fa fa-reply"></i> From</label>
+        <input type="text" id="node-input-from" placeholder="From">
+    </div>
+    <div class="form-row">
+        <label for="node-input-to"><i class="fa fa-envelope"></i> To</label>
+        <input type="text" id="node-input-to" placeholder="To">
+    </div>
+    <div class="form-row">
+        <label for="node-input-cc"><i class="fa fa-clone"></i> CC</label>
+        <input type="text" id="node-input-cc" placeholder="CC">
+    </div>
+    <div class="form-row">
+        <label for="node-input-bcc"><i class="fa fa-clone"></i> BCC</label>
+        <input type="text" id="node-input-bcc" placeholder="BCC">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="MIME Generator">
+    <h1>node-red-contrib-mime-generator</h1>
+    <p>RFC 2822 compliant raw email message generator for node-red</p>
+
+<p>Supports plain text, HTML and AMP contents. Attachments support not implemented yet.</p>
+
+<h2>Configure the node</h2>
+<p>Double click the node and fill all fields</p>
+
+<h2>Payload</h2>
+<p>It expects a payload with an object containing the desired content-types, example:</p>
+
+<code>
+{
+    "text/plain": "This is my awesome email message",
+    "text/html": "This is my awesome &lt;b&gt;HTML&lt;/b&gt; email message"
+}
+</code>
+
+<h2>Message (msg) properties supported</h2>
+<table>
+    <tr>
+        <th>property</th>
+        <th>description</th>
+        <th>type</th>
+        <th>example</th>
+    </tr>
+    <tr>
+        <td>subject</td>
+        <td>the subject for the e-mail message</td>
+        <td>string</td>
+        <td>&quot;Victor &lt;victoralmaraz@github.com&gt;&quot;</td>
+    </tr>
+    <tr>
+        <td>to</td>
+        <td>to email address(es)</td>
+        <td>array of strings or single string</td>
+        <td>[ &quot;another@email.com&quot;, &quot;another2@email.com&quot; ]</td>
+    </tr>
+    <tr>
+        <td>cc</td>
+        <td>cc email address(es)</td>
+        <td>array of strings or single string</td>
+        <td>[ &quot;another@email.com&quot;, &quot;another2@email.com&quot; ]</td>
+    </tr>
+    <tr>
+        <td>cc</td>
+        <td>bcc email address(es)</td>
+        <td>array of strings or single string</td>
+        <td>[ &quot;another@email.com&quot;, &quot;another2@email.com&quot; ]</td>
+    </tr>
+</table>
+
+<h2>Return</h2>
+<p>It returns the raw RFC 2822 email message</p>
+
+<code>
+example here!
+</code>
+    
+</script>

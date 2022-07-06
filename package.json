@@ -1,0 +1,25 @@
+{
+  "name": "red-contrib-mime-generator",
+  "version": "1.0.0",
+  "description": "RFC2822 compliant raw email message generator for node-red",
+  "keywords": [
+    "node-red",
+    "rfc-2822",
+    "mime-message",
+    "email-message"
+  ],
+  "main": "index.js",
+  "node-red": {
+    "nodes": {
+      "mime-generator": "src/nodes/mime-generator.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Almaraz <victor@almaraz.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "mimetext": "git+https://github.com/VictorAlmaraz/MIMEText.git"
+  }
+}
