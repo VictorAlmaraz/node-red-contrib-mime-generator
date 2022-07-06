@@ -30,10 +30,8 @@ if(this.bcc)
     email.setBcc(this.bcc);
 
 if(typeof msg.payload == 'string') {
-    this.warn('simple string', msg.payload);
     email.setMessage('text/plain', msg.payload);
 } else {
-    this.warn(`complex object ${JSON.stringify(msg.payload)}`);
     const keys = Object.keys(msg.payload);
     keys.forEach((key, index) => {
         email.setMessage(key, msg.payload[key]);
