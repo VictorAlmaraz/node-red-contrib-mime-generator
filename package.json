@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-mime-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "RFC2822 compliant raw email message generator for node-red",
   "keywords": [
     "node-red",
